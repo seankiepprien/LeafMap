@@ -1,0 +1,12 @@
+name: Maps
+form: $/nerdauto/leafmap/models/maps/fields.yaml
+modelClass: nerdauto\leafmap\models\maps
+defaultRedirect: nerdauto/leafmap/maps
+create:
+    redirect: 'nerdauto/leafmap/maps/update/:id'
+    redirectClose: nerdauto/leafmap/maps
+update:
+    redirect: nerdauto/leafmap/maps
+    redirectClose: nerdauto/leafmap/maps
+preview:
+    title: View

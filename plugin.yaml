@@ -1,0 +1,12 @@
+plugin:
+    name: 'nerdauto.leafmap::lang.plugin.name'
+    description: 'nerdauto.leafmap::lang.plugin.description'
+    author: 'Nerd Auto'
+    icon: icon-leaf
+    homepage: 'https://github.com/seankiepprien/octobercms-leafmap'
+navigation:
+    main-menu-item:
+        label: Maps
+        url: nerdauto/leafmap/maps
+        icon: icon-map-marker
+        permission: ['nerdauto.leafmap.*']

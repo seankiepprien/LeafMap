@@ -1,0 +1,44 @@
+fields:
+    name:
+        label: 'nerdauto.leafmap::lang.maps.name.label'
+        span: auto
+        placeholder: 'nerdauto.leafmap::lang.maps.name.placeholder'
+        required: 1
+        type: text
+        commentAbove: 'nerdauto.leaflet::lang.maps.name.comment'
+    provider:
+        label: 'nerdauto.leaflet::lang.maps.form.providers.heading'
+        span: full
+        type: section
+        comment: 'nerdauto.leafmap::lang.maps.form.providers.comment'
+tabs:
+    fields:
+        OpenStreetMaps:
+            label: 'nerdauto.leafmap::lang.maps.form.osm.heading'
+            span: full
+            type: section
+            comment: 'nerdauto.leafmap::lang.maps.form.osm.comment'
+            tab: OpenStreetMaps
+        Mapbox:
+            label: 'nerdauto.leafmap::lang.maps.form.mapbox.heading'
+            span: full
+            type: section
+            comment: 'nerdauto.leafmap::lang.maps.form.mapbox.comment'
+            tab: Mapbox
+        mapboxId:
+            label: 'nerdauto.leafmap::lang.maps.mapbox_id.label'
+            span: left
+            placeholder: 'nerdauto.leafmap::lang.maps.mapbox_id.placeholder'
+            type: text
+            comment: 'nerdauto.leafmap::lang.maps.mapbox_id.comment'
+            tab: Mapbox
+            required: 1
+        mapboxAccessToken:
+            label: 'nerdauto.leafmap::lang.maps.mapbox_access_token.label'
+            size: tiny
+            span: full
+            placeholder: 'nerdauto.leafmap::lang.maps.mapbox_access_token.placeholder'
+            type: textarea
+            comment: 'nerdauto.leafmap::lang.maps.mapbox_access_token.comment'
+            tab: Mapbox
+            required: 1

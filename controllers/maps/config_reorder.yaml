@@ -1,0 +1,4 @@
+title: Maps
+modelClass: Nerdauto\Leafmap\Models\Maps
+toolbar:
+    button: reorder_toolbar

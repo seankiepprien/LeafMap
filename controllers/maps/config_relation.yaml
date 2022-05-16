@@ -1,0 +1,9 @@
+objects:
+    label: Objects
+    view:
+        list: $/nerdauto/leafmap/models/objects/columns.yaml
+        toolbarButtons: create|delete
+    manage:
+        form: $/nerdauto/leafmap/models/objects/fields.yaml
+        recordsPerPage: 10
+    deferredBinding: true

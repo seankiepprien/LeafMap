@@ -1,0 +1,11 @@
+list: $/nerdauto/leafmap/models/objects/columns.yaml
+modelClass: Nerdauto/Leafmap/Models/Objects
+title: Objects
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search.prompt'
+recordUrl: 'nerdauto/leafmap/objects/update/:id'

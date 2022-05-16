@@ -1,0 +1,52 @@
+{% set map = __SELF__.map %}
+
+
+
+{% put scripts %}
+    <script>
+        document.write('<div id="{{ map.fieldId }}" style="height: {{ map.height }}">');
+        let {{ map.fieldId }} = L.map('{{ map.fieldId }}', { scrollWheelZoom: {{ map.scrollWheelZoom  }} }).setView([{{ map.latitude }}, {{ map.longitude }}], {{ map.zoom }});
+
+        let defaultIcon = L.icon({
+            iconUrl: '/plugins/nerdauto/leafmap/assets/leaflet/images/market-icon.png',
+            iconRetinaUrl: '/plugins/nerdauto/leafmap/assets/leaflet/images/marker-icon-2x.png',
+            shadowUrl: '/plugins/nerdauto/leafmap/assets/leaflet/images/marker-shadow.png',
+
+            iconSize: [25, 41],
+            shadowSize: [41, 41],
+            iconAnchor: [12, 41],
+            popupAnchor: [1, -34],
+            tooltipAnchor: [16, -28]
+        });
+        {% if map.mapboxAccessToken %}
+            L.tileLayer('https://api.mapbox.com/styles/v1/seankiepprien/cl312gf2d003215o5tpbiskc0/wmts?access_token={{ map.mapboxAccessToken }}', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright/en">OpenStreetMap</a> contributors, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+                maxZoom: {{ map.maxZoom }},
+                id: '{{ map.mapboxId }}',
+                accessToken: '{{ map.mapboxAccessToken }}'
+            }).addTo({{ map.fieldId }});
+        {% else %}
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright/en">OpenStreetMap</a> contributors',
+                maxZoom: {{ map.maxZoom }}
+        }).addTo({{ map.fieldId }});)
+        {% endif %}
+        let parameters = {};
+        {% for object in map.objectsToDisplay %}
+            parameters = {% if object.parameters %} {{ object.parameters|replace({"\n":'', "\r":''})|trim|raw }} {% else %} {} {% endif %};
+        {% if object.type == 'marker' %}
+        {% if object.icon is not empty %}
+            parameters['icon'] = icon{{ object.icon }};
+        {% else %}
+            parameters['icon'] = defaultIcon;
+        {% endif %}
+        {% endif %}
+            let mapObject{{ loop.index }} = L.{{ object.type }}([{{ object.position|trim }}], parameters).addTo({{ map.fieldId }});
+        {% if object.popup %}
+            mapObject{{ loop.index }}.bindPopup(`{{ html_clean(object.popup|replace({"\n":'', "\r":''})|trim)|raw }}`);
+        {% endif %}
+        {% endfor %}
+    </script>
+{% endput %}
+
+
