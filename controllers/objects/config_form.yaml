@@ -1,0 +1,10 @@
+name: Objects
+form : $/nerdauto/leafmap/models/objects/fields.yaml
+modelClass: Nerdauto\Leafmap\Models\Objects
+defaultRedirect: nerdauto/leafmap/objects
+create:
+    redirect: 'nerdauto/leafmap/objects/update/:id'
+    redirectClose: nerdauto/leafmap/objects
+update:
+    redirect: nerdauto/leafmap/objects
+    redirectClose: nerdauto/leafmap/objects

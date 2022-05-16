@@ -1,0 +1,4 @@
+title: Objects
+modelClass: Nerdauto\Leafmap\Models\Objects
+toolbar:
+    buttons: reorder_toolbar

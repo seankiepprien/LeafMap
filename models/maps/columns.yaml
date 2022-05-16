@@ -1,0 +1,18 @@
+columns:
+    name:
+        label: 'nerdauto.leafmap::lang.maps.name.label'
+        type: text
+        searchable: true
+        sortable: true
+    object_count:
+        label: 'nerdauto.leafmap::lang.maps.object_count'
+        relation: objects_count
+        valueFrom: count
+        default: 0
+        sortable: false
+    created_at:
+        label: 'nerdauto.leafmap::lang.common.created_at'
+        type: timesince
+    updated_at:
+        label: 'nerdauto.leafmap::lang.common.updated_at'
+        type: timesince

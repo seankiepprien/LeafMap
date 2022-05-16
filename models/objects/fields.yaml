@@ -1,0 +1,42 @@
+fields:
+    name:
+        label: 'nerdauto.leafmap::lang.objects.name.label'
+        span: auto
+        placeholder: 'nerdauto.leafmap::lang.objects.name.placeholder'
+        default: ''
+        cssClass: ''
+        required: 1
+        type: text
+        commentAbove: 'nerdauto.leafmap::lang.objects.name.comment'
+    type:
+        label: 'nerdauto.leafmap::lang.objects.type.label'
+        options:
+            marker: 'nerdauto.leafmap::lang.objects.type.marker'
+            circle: 'nerdauto.leafmap::lang.objects.type.circle'
+            polygon: 'nerdauto.leafmap::lang.objects.type.polygon'
+        span: auto
+        placeholder: 'nerdauto.leafmap::lang.objects.type.placeholder'
+        default: ''
+        type: dropdown
+        commentAbove: 'nerdauto.leafmap::lang.objects.position.label'
+        required: 1
+    position:
+        label: 'nerdauto.leafmap::lang.objects.position.label'
+        default: ''
+        cssClass: ''
+        required: 1
+        type: text
+        commentAbove: 'nerdauto.leafmap::lang.objects.position.comment'
+    parameters:
+        label: 'nerdauto.leafmap::lang.objects.parameters.label'
+        size: small
+        language: json
+        span: auto
+        type: codeeditor
+        commentAbove: 'nerdauto.leafmap::lang.objects.parameters.comment'
+    popup:
+        label: 'nerdauto.leafmap::lang.objects.popups.label'
+        size: small
+        span: full
+        type: richeditor
+        commentAbove: 'nerdauto.leafmap::lang.objects.popups.comment'

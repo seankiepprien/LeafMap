@@ -1,0 +1,19 @@
+columns:
+    name:
+        label: 'nerdauto.leafmap::lang.objects.name.label'
+        type: text
+        searchable: true
+        sortable: false
+    type:
+        label: 'nerdauto.leafmap::lang.objects.type.label'
+        type: partial
+        path: ~/plugins/nerdauto/leafmap/models/objects/_type_column.htm
+    position:
+        label: 'nerdauto.leafmap::lang.objects.position.label'
+        type: text
+    created_at:
+        label: 'nerdauto.leafmap::lang.common.created_at'
+        type: timesince
+    updated_at:
+        label: 'nerdauto.leafmap::lang.common.updated_at'
+        type: timesince
